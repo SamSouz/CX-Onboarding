@@ -17,43 +17,44 @@
       color: #222;
     }
 
-    .navbar-main {
-      background-image: url('https://jcconcursos.com.br/media/uploads/noticia/mercado-livre-novo-canva.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 450px;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding-top: 20px;
-      color: #FFD600;
-    }
+    /* NAVBAR PRINCIPAL */
+ .navbar-main {
+  background-image: url('https://jcconcursos.com.br/media/uploads/noticia/mercado-livre-novo-canva.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 450px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+  color: #FFD600;
+}
+.navbar-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* escurece a imagem para contraste */
+  z-index: 0;
+}
 
-    .navbar-main::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 0;
-    }
+.logo {
+  font-size: 35px;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
 
-    .logo {
-      font-size: 35px;
-      font-weight: bold;
-      position: relative;
-      z-index: 1;
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-align: center;
-    }
+.logo a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    .logo a {
-      color: inherit;
-      text-decoration: none;
-    }
-
+    /* NAVBAR SECUNDÁRIA */
     .navbar-sub {
       background-color: #1a1a1a;
       color: #FFD600;
@@ -75,6 +76,7 @@
       color: #fff;
     }
 
+    /* HERO */
     .hero {
       background-color: #000;
       color: #FFD600;
@@ -82,89 +84,117 @@
       text-align: center;
     }
 
-    .hero-links {
-      display: flex;
-      justify-content: center;
-      gap: 100px;
-      margin-top: 10px;
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
     }
 
-    .hero-links a {
-      color: #FFD600;
-      text-decoration: none;
-      font-weight: bold;
+    .hero p {
       font-size: 18px;
-      padding: 8px 16px;
-      border: 2px solid transparent;
-      transition: all 0.3s ease;
-      border-radius: 4px;
+      margin-bottom: 20px;
+      color:#f4f4f4
     }
 
-    .hero-links a:hover {
-      color: #FFD600;
-      background-color: #fff;
-      border: 2px solid #fff;
-    }
+    .hero-links {
+  display: flex;
+  justify-content: center;
+  gap: 100px; /* <-- Espaço maior entre os links */
+  margin-top: 10px;
+}
 
-    .movies {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+.hero-links a {
+  color: #FFD600;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.hero-links a:hover {
+  color: #FFD600; /* texto amarelo */
+  background-color: #fff; /* fundo branco */
+  border: 2px solid #fff; /* borda branca */
+}
+    /* MOVIES GRID */
+      .movies {
+  padding: 5px 15px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column; /* empilha verticalmente */
+  gap: 15px;
+  align-items: flex-start; /* alinha o conteúdo à esquerda */
+}
+
 
     .movies h2 {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
-    .cards-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .card-link {
-      text-decoration: none;
-    }
-
-   .card {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 20px;
-  width: 200px;
-  min-height: 120px; /* Altura padrão */
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.3s, border 0.3s;
-  border: 2px solid transparent;
-  color: #222;
-
-  /* Centraliza o conteúdo vertical e horizontalmente */
+    .movie-row {
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  /* Evita quebra de palavras indesejada */
-  word-wrap: break-word;
-  text-align: center;
+  flex-direction: column;   /* empilhar verticalmente */
+  align-items: flex-start;  /* alinhar à esquerda */
+  gap: 15px;
+  /* remova justify-content: center; */
 }
 
 
-    .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  border-color: #ffd600;
-}
-
-
-    .card.selected {
-      border-color: #ffd600;
-      background-color: #fffbe6;
-      font-weight: bold;
+    .movie-card {
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 180px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+.movie-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+      text-align: left;
+      max-width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
+.movie-list li {
+      padding: 10px 15px;
+      border-bottom: 1px solid #ccc;
+      font-size: 18px;
+      color: #222;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+.movie-list li:hover {
+  background-color: #ffd600; /* amarelo de destaque no hover */
+  color: #000;
+}
+
+.movie-list li.selected {
+  background-color: #ffd600;
+  color: #000;
+  font-weight: bold;
+}
+.detail-box {
+  flex: 1;
+  min-width: 250px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 20px;
+  font-size: 18px;
+  color: #222;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  min-height: 300px;
+}
+    /* FOOTER */
     footer {
       background-color: #000;
       color: #FFD600;
@@ -181,13 +211,18 @@
     }
 
     @media (max-width: 600px) {
-      .hero-links {
+      .navbar-main,
+      .navbar-sub {
         flex-direction: column;
-        gap: 15px;
+        align-items: center;
       }
 
-      .card {
-        width: 80%;
+      .navbar-sub {
+        gap: 20px;
+      }
+
+      .movie-card {
+        width: 45vw;
       }
     }
   </style>
@@ -203,48 +238,60 @@
 
   <!-- HERO -->
   <section class="hero">
+   
     <div class="hero-links">
-      <a href="home">Home</a>
-      <a href="https://cx-onboarding.netlify.app/brrc">RCs</a>
-      <a href="#">FCs</a>
-    </div>
+  <a href="home">Home</a>
+  <a href="https://cx-onboarding.netlify.app/brrc">RCs</a>
+  <a href="#">FCs</a>
+</div>
+
   </section>
 
-  <!-- LINKS ÚTEIS COMO CARDS COM LINK -->
-  <section class="movies">
-    <h2>Links Úteis</h2>
-    <div class="cards-grid" id="cardGrid"></div>
-  </section>
+  <!-- MOVIES -->
+<section class="movies">
+  <h2>Populares</h2>
+  <div style="display: flex; gap: 20px; align-items: flex-start;">
+    <ul class="movie-list movie-row" id="movieRow"></ul>
+    <div class="detail-box" id="detailBox">
+      <h3>Detalhes</h3>
+      <p>Selecione um item da lista para ver mais informações.</p>
+    </div>
+  </div>
+</section>
+
+
+
 
   <!-- FOOTER -->
   <footer>
-    <h2>Customer Experience</h2>
+    <h2>Custome Experience</h2>
     <p>Aqui cuidamos da percepção geral e impressão que um cliente tem sobre uma empresa durante toda sua jornada de interação, desde o primeiro contato...</p>
   </footer>
 
-  <script>
-    const cards = [
-      { title: "One Task", url: "https://one-task.adminml.com/" },
-      { title: "Seguimento de Tarefas", url: "https://docs.google.com/spreadsheets/d/1AykJ8sTcs7Q5vU5npqpK1c2YKkd1tYpaWGWEA5O_63M/edit?pli=1&gid=1612441423#gid=1612441423 " },
-      { title: "Google Chat", url: "https://chat.google.com/" },
-      { title: "Monitor de Gerenciamento", url: "https://lookerstudio.google.com/u/0/reporting/b88f7982-9f6e-44d8-a4c7-7446880f7e7d/page/p_34aykovjjd " }
-    ];
+   <script>
+  const movies = [
+  { title: "Overage", description: "Descrição do Overage." },
+  { title: "Found", description: "Descrição do Found." },
+  { title: "Shortage", description: "Descrição do Shortage." },
+  { title: "Lost", description: "Descrição do Lost." },
+];
 
-    const cardGrid = document.getElementById('cardGrid');
+const movieRow = document.getElementById('movieRow');
+const detailBox = document.getElementById('detailBox');
 
-    cards.forEach(card => {
-      const link = document.createElement('a');
-      link.href = card.url;
-      link.target = "_blank"; // abre em nova aba
-      link.classList.add('card-link');
-
-      const div = document.createElement('div');
-      div.classList.add('card');
-      div.textContent = card.title;
-
-      link.appendChild(div);
-      cardGrid.appendChild(link);
+movies.forEach(movie => {
+  const li = document.createElement('li');
+  li.textContent = movie.title;
+  li.addEventListener('click', () => {
+    document.querySelectorAll('.movie-list li').forEach(item => {
+      item.classList.remove('selected');
     });
+    li.classList.add('selected');
+    detailBox.innerHTML = `<h3>${movie.title}</h3><p>${movie.description}</p>`;
+  });
+  movieRow.appendChild(li);
+});
+
   </script>
 
 </body>
