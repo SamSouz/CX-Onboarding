@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CX Onboarding - Duas Navbars</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #222;
+    }
+
+    /* NAVBAR PRINCIPAL */
+ .navbar-main {
+  background-image: url('https://jcconcursos.com.br/media/uploads/noticia/mercado-livre-novo-canva.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 450px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+  color: #FFD600;
+}
+.navbar-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* escurece a imagem para contraste */
+  z-index: 0;
+}
+
+.logo {
+  font-size: 35px;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.logo a {
+  color: inherit;
+  text-decoration: none;
+}
+
+    /* NAVBAR SECUNDÁRIA */
+    .navbar-sub {
+      background-color: #1a1a1a;
+      color: #FFD600;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 10px 0;
+      font-size: 16px;
+    }
+
+    .navbar-sub a {
+      color: #FFD600;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .navbar-sub a:hover {
+      color: #fff;
+    }
+
+    /* HERO */
+    .hero {
+      background-color: #000;
+      color: #FFD600;
+      padding: 10px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color:#f4f4f4
+    }
+
+    .hero-links {
+  display: flex;
+  justify-content: center;
+  gap: 100px; /* <-- Espaço maior entre os links */
+  margin-top: 10px;
+}
+
+.hero-links a {
+  color: #FFD600;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.hero-links a:hover {
+  color: #FFD600; /* texto amarelo */
+  background-color: #fff; /* fundo branco */
+  border: 2px solid #fff; /* borda branca */
+}
+    /* MOVIES GRID */
+      .movies {
+  padding: 5px 15px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column; /* empilha verticalmente */
+  gap: 15px;
+  align-items: flex-start; /* alinha o conteúdo à esquerda */
+}
+
+
+    .movies h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .movie-row {
+  display: flex;
+  flex-direction: column;   /* empilhar verticalmente */
+  align-items: flex-start;  /* alinhar à esquerda */
+  gap: 15px;
+  /* remova justify-content: center; */
+}
+
+
+    .movie-card {
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 180px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+.movie-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+      text-align: left;
+      max-width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+.movie-list li {
+      padding: 10px 15px;
+      border-bottom: 1px solid #ccc;
+      font-size: 18px;
+      color: #222;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+.movie-list li:hover {
+  background-color: #ffd600; /* amarelo de destaque no hover */
+  color: #000;
+}
+
+.movie-list li.selected {
+  background-color: #ffd600;
+  color: #000;
+  font-weight: bold;
+}
+.detail-box {
+  flex: 1;
+  min-width: 250px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 20px;
+  font-size: 18px;
+  color: #222;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  min-height: 300px;
+}
+    /* FOOTER */
+    footer {
+      background-color: #000;
+      color: #FFD600;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 16px;
+      color: #f4f4f4;
+    }
+
+    @media (max-width: 600px) {
+      .navbar-main,
+      .navbar-sub {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .navbar-sub {
+        gap: 20px;
+      }
+
+      .movie-card {
+        width: 45vw;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR PRINCIPAL -->
+  <header class="navbar-main">
+    <div class="logo">
+      <a href="#"> CX Onboarding </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+   
+    <div class="hero-links">
+  <a href="#">Home</a>
+  <a href="#">RCs</a>
+  <a href="#">FCs</a>
+</div>
+
+  </section>
+
+  <!-- MOVIES -->
+<section class="movies">
+  <h2>Populares</h2>
+  <div style="display: flex; gap: 20px; align-items: flex-start;">
+    <ul class="movie-list movie-row" id="movieRow"></ul>
+    <div class="detail-box" id="detailBox">
+      <h3>Detalhes</h3>
+      <p>Selecione um item da lista para ver mais informações.</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <h2>Custome Experience</h2>
+    <p>Aqui cuidamos da percepção geral e impressão que um cliente tem sobre uma empresa durante toda sua jornada de interação, desde o primeiro contato...</p>
+  </footer>
+
+   <script>
+  const movies = [
+  { title: "Overage", description: "Descrição do Overage." },
+  { title: "Found", description: "Descrição do Found." },
+  { title: "Shortage", description: "Descrição do Shortage." },
+  { title: "Lost", description: "Descrição do Lost." },
+];
+
+const movieRow = document.getElementById('movieRow');
+const detailBox = document.getElementById('detailBox');
+
+movies.forEach(movie => {
+  const li = document.createElement('li');
+  li.textContent = movie.title;
+  li.addEventListener('click', () => {
+    document.querySelectorAll('.movie-list li').forEach(item => {
+      item.classList.remove('selected');
+    });
+    li.classList.add('selected');
+    detailBox.innerHTML = `<h3>${movie.title}</h3><p>${movie.description}</p>`;
+  });
+  movieRow.appendChild(li);
+});
+
+  </script>
+
+</body>
+</html>
