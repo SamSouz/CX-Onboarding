@@ -131,26 +131,23 @@
 
    .card {
   background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 20px;
-  width: 200px;
-  min-height: 120px; /* Altura padrão */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  width: 150px;
+  min-height: 90px;
   text-align: center;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.3s, border 0.3s;
   border: 2px solid transparent;
   color: #222;
-
-  /* Centraliza o conteúdo vertical e horizontalmente */
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* Evita quebra de palavras indesejada */
   word-wrap: break-word;
-  text-align: center;
+  font-size: 14px;
 }
+
 
 
     .card:hover {
@@ -224,12 +221,24 @@
   </footer>
 
   <script>
-    const cards = [
-      { title: "One Task", url: "https://one-task.adminml.com/" },
-      { title: "Seguimento de Tarefas", url: "https://docs.google.com/spreadsheets/d/1AykJ8sTcs7Q5vU5npqpK1c2YKkd1tYpaWGWEA5O_63M/edit?pli=1&gid=1612441423#gid=1612441423 " },
-      { title: "Google Chat", url: "https://chat.google.com/" },
-      { title: "Monitor de Gerenciamento", url: "https://lookerstudio.google.com/u/0/reporting/b88f7982-9f6e-44d8-a4c7-7446880f7e7d/page/p_34aykovjjd " }
-    ];
+const cards = [
+  { title: "Código ML", url: "https://wms.adminml.com/reports/skus" },
+  { title: "Google Chat", url: "https://chat.google.com/" },
+  { title: "Inbound Shipments", url: "https://wms.adminml.com/reports/inbound-shipment" },
+  { title: "Monitor de Gerenciamento", url: "https://lookerstudio.google.com/u/0/reporting/b88f7982-9f6e-44d8-a4c7-7446880f7e7d/page/p_34aykovjjd " },
+  { title: "Movimentação De Estoque", url: "https://wms.adminml.com/reports/movements" },
+  { title: "Mu De Transfêrencia", url: "https://wms.adminml.com/reports/mu-in-transfer" },
+  { title: "One Task", url: "https://one-task.adminml.com/" },
+  { title: "Problem Solving", url: "https://wms.adminml.com/reports/problem-solver/tasks" },
+  { title: "Relatório de Inconsistencias", url: "https://wms.adminml.com/reports/inconsistencies?site_id=MLB&date_to=2024-07-10T02%3A59%3A59.999%2B00%3A00&date_from=2024-06-09T03%3A00%3A00.000%2B00%3A00&limit=50&sort=date_last_updated_desc" },
+  { title: "Sauron", url: "https://shipping-bo.adminml.com/sauron/fulfillment/inventory" },
+  { title: "Seguimento de Tarefas", url: "https://docs.google.com/spreadsheets/d/1AykJ8sTcs7Q5vU5npqpK1c2YKkd1tYpaWGWEA5O_63M/edit?pli=1&gid=1612441423#gid=1612441423 " },
+  { title: "Teste", url: "#" },
+  { title: "Teste", url: "#" },
+  { title: "Teste", url: "#" },
+  { title: "Teste", url: "#" },
+  { title: "WMS", url: "https://wms.adminml.com/menu" }
+];
 
     const cardGrid = document.getElementById('cardGrid');
 
